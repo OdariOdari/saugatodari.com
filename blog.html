@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Saugat Odari</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode {
+      background-color: #1a1a1a;
+      color: #f9f9f9;
+    }
+
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 15px 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    body.dark-mode header {
+      background-color: #1c2833;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+    }
+
+    /* Dark Mode Toggle Button */
+    .dark-mode-toggle {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .dark-mode-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    /* Blog Content Styles */
+    .blog-content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body.dark-mode .blog-content {
+      background-color: #2c3e50;
+      color: #f9f9f9;
+    }
+
+    .blog-post {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    body.dark-mode .blog-post {
+      border-color: #34495e;
+    }
+
+    .blog-post h2 {
+      margin-top: 0;
+      font-size: 28px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    body.dark-mode .blog-post h2 {
+      color: #1abc9c;
+    }
+
+    .blog-post .post-date {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    body.dark-mode .blog-post .post-date {
+      color: #aaa;
+    }
+
+    .blog-post p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    body.dark-mode .blog-post p {
+      color: #ddd;
+    }
+
+    .blog-post a {
+      color: #1abc9c;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .blog-post a:hover {
+      color: #16a085;
+    }
+
+    /* Back to Home Button */
+    .back-to-home {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .back-to-home a {
+      background-color: #1abc9c;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .back-to-home a:hover {
+      background-color: #16a085;
+      transform: translateY(-2px);
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 15px 0;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #1abc9c;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+      }
+
+      nav ul {
+        margin-top: 10px;
+      }
+
+      nav ul li {
+        margin: 0 10px;
+      }
+
+      .blog-content {
+        margin: 30px 15px;
+        padding: 20px;
+      }
+
+      .blog-post h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Saugat Odari</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+            🌙
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Blog Content -->
+  <div class="blog-content">
+    <h2>My Blog Posts</h2>
+    <div id="blogPosts">
+      <!-- Example Blog Post -->
+      <div class="blog-post">
+        <h2><a href="blog-post1.html">Introduction to Cybersecurity</a></h2>
+        <p class="post-date">Posted on: January 23, 2025</p>
+        <p>Explore the fundamentals of cybersecurity, including threat detection, risk management, and best practices for securing digital assets in modern networked environments.</p>
+      </div>
+
+      <div class="blog-post">
+        <h2><a href="blog-post2.html">Networking Essentials</a></h2>
+        <p class="post-date">Posted on: February 15, 2025</p>
+        <p>Understanding the core concepts of computer networking, from TCP/IP fundamentals to advanced routing protocols and network architecture design principles.</p>
+      </div>
+
+      <div class="blog-post">
+        <h2><a href="blog-post3.html">Machine Learning Basics</a></h2>
+        <p class="post-date">Posted on: March 30, 2025</p>
+        <p>A beginner's guide to machine learning concepts, covering supervised and unsupervised learning, neural networks, and real-world applications in data analysis.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Home Button -->
+  <div class="back-to-home">
+    <a href="index.html">Back to Home</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Saugat Odari. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/saugatodari/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/OdariOdari" target="_blank">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    // Dark Mode Toggle
+    const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    const body = document.body;
+
+    // Check for saved user preference
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+      body.classList.add('dark-mode');
+    }
+
+    // Toggle Dark Mode
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+      } else {
+        localStorage.setItem('dark-mode', 'disabled');
+      }
+    });
+  </script>
+</body>
+</html>

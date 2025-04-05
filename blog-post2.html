@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Networking Essentials - Saugat Odari</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode {
+      background-color: #1a1a1a;
+      color: #f9f9f9;
+    }
+
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 15px 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    body.dark-mode header {
+      background-color: #1c2833;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+    }
+
+    /* Dark Mode Toggle Button */
+    .dark-mode-toggle {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .dark-mode-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    /* Blog Content Styles */
+    .blog-content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body.dark-mode .blog-content {
+      background-color: #2c3e50;
+      color: #f9f9f9;
+    }
+
+    .blog-content h2 {
+      margin-top: 0;
+      font-size: 28px;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    body.dark-mode .blog-content h2 {
+      color: #1abc9c;
+    }
+
+    .blog-content .post-date {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    body.dark-mode .blog-content .post-date {
+      color: #aaa;
+    }
+
+    .blog-content p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    body.dark-mode .blog-content p {
+      color: #ddd;
+    }
+
+    .blog-content h3 {
+      font-size: 22px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    body.dark-mode .blog-content h3 {
+      color: #1abc9c;
+    }
+
+    .blog-content ul {
+      padding-left: 20px;
+    }
+
+    .blog-content ul li {
+      margin-bottom: 10px;
+    }
+
+    /* Back to Home Button */
+    .back-to-home {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .back-to-home a {
+      background-color: #1abc9c;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .back-to-home a:hover {
+      background-color: #16a085;
+      transform: translateY(-2px);
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 15px 0;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #1abc9c;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+      }
+
+      nav ul {
+        margin-top: 10px;
+      }
+
+      nav ul li {
+        margin: 0 10px;
+      }
+
+      .blog-content {
+        margin: 30px 15px;
+        padding: 20px;
+      }
+
+      .blog-content h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Saugat Odari</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+            🌙
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Blog Post Content -->
+  <div class="blog-content">
+    <h2>Networking Essentials</h2>
+    <p class="post-date">Posted on: February 15, 2025</p>
+    <p>Networking is the backbone of modern communication, enabling everything from internet browsing to cloud computing. This post delves into the core concepts of computer networking, from basic protocols to advanced network design.</p>
+    
+    <h3>Understanding TCP/IP</h3>
+    <p>TCP/IP (Transmission Control Protocol/Internet Protocol) is the fundamental protocol suite that powers the internet. It includes protocols for routing, addressing, and ensuring reliable data transmission across networks.</p>
+    
+    <h3>Routing Protocols</h3>
+    <p>Routing protocols like OSPF, BGP, and RIP determine how data packets are routed from source to destination across networks. They manage path selection based on various metrics like hop count, bandwidth, and reliability.</p>
+    
+    <h3>Network Architecture</h3>
+    <p>Network architecture involves designing the structure of a network, including topology, hardware, protocols, and security measures. Common architectures include star, bus, mesh, and hybrid networks, each with its advantages in terms of scalability, cost, and performance.</p>
+    
+    <h3>Why Networking Matters</h3>
+    <p>Understanding networking is essential for anyone involved in IT, from system administrators to software developers, as it underpins how data moves, how services are accessed, and how security is maintained in digital environments.</p>
+  </div>
+
+  <!-- Back to Blog Button -->
+  <div class="back-to-home">
+    <a href="blog.html">Back to Blog</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Saugat Odari. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/saugatodari/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/OdariOdari" target="_blank">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    // Dark Mode Toggle
+    const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    const body = document.body;
+
+    // Check for saved user preference
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+      body.classList.add('dark-mode');
+    }
+
+    // Toggle Dark Mode
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+      } else {
+        localStorage.setItem('dark-mode', 'disabled');
+      }
+    });
+  </script>
+</body>
+</html>
